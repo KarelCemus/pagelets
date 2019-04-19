@@ -4,7 +4,7 @@ import akka.actor.ActorSystem
 import akka.stream.ActorMaterializer
 import akka.stream.scaladsl.Source
 import akka.util.ByteString
-import org.mockito.Matchers._
+import org.mockito.ArgumentMatchers._
 import org.mockito.Mockito._
 import org.scalatest.mockito.MockitoSugar
 import org.scalatestplus.play.PlaySpec
@@ -45,7 +45,7 @@ class PageletActionsTest extends PlaySpec with GuiceOneAppPerSuite with MockitoS
   def buildMock(service: PageBuilder#PageBuilderService)(result: PageletResult) =
     when(service.build(
       any[Leaf[_, _]],
-      anyVararg[Arg])(
+      any[Arg])(
       any[Request[AnyContent]])).thenReturn(result)
 
   val onError = Call("get", "error")
