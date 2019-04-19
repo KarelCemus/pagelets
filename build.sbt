@@ -2,7 +2,7 @@ name := """pagelets"""
 
 lazy val root = (project in file(".")).
   settings(Seq(
-    organization := "org.splink",
+    organization := "com.github.karelcemus",
     scalaVersion := "2.12.8",
     libraryDependencies ++= Seq(
       "org.scala-lang" % "scala-reflect" % scalaVersion.value,
@@ -20,7 +20,7 @@ lazy val root = (project in file(".")).
       "-language:implicitConversions",
       "-language:higherKinds",
       "-language:existentials")
-  ))
+  ) ++ publishSettings)
 
 
 author := "Karel Cemus"
